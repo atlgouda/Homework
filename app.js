@@ -42,6 +42,12 @@ app.get('/', (req, res) => {
     res.send('Welcome to Pizza Express!')
 })
 
+app.get('/:error', (req, res) => {
+    res.render('error.hbs', {
+        message: req.params.error
+    })
+})
+
 app.listen(PORT, function(){
   console.log("==========================")
   console.log(`LISTENING ON PORT ${PORT}`);
